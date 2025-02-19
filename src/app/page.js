@@ -1,5 +1,4 @@
 import Results from "@/components/Results";
-import { revalidatePath } from "next/cache";
 
 const API_KEY = process.env.API_KEY;
 
@@ -22,18 +21,17 @@ export default async function Home({ searchParams }) {
     const data = await res.json();
     console.log(data.results);
 
+    const results = data.results;
+
     return (
       <div>
-        <h1>Movie List</h1>
-        {data.results.map((movie) => (
-          <div key={movie.id}>{movie.title || movie.name}</div>
-        ))}
-      </div>
+      <Results results={results} />
+    </div>
     );
   } catch (error) {
     console.error(error);
     return <div>
-      <Results results={results} />
+      <Results result={result} />
     </div>;
   }
 }
