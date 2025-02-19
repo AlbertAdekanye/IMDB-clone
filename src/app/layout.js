@@ -26,8 +26,8 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers> 
           <Header />
-          {/* <Navbar />
-          <SearchBox /> */}
+          <Navbar />
+          <SearchBox />
           {children}
         </Providers>
       </body>
