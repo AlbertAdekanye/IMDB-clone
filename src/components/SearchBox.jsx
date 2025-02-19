@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation'; 
 
 export default function SearchBox() {
@@ -10,7 +10,7 @@ export default function SearchBox() {
 
   const handleSearch = async (e) => {
     e.preventDefault(); // Prevents page refresh
-    router.push(`/search?q=${search}`);
+    router.push(`/search/${search}`);
   }
 
   return (
